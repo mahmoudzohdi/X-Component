@@ -17,6 +17,9 @@
 
         <div class="media-content">
           <h5 class="title is-5">{{ component.github.name }}</h5>
+          <p class="content">
+            {{ component.description }}
+          </p>
           <p class="subtitle is-6">
             <a
               :href="getGithubUserProfileURL(component.github.username)"
@@ -26,6 +29,27 @@
             >
               @{{ component.github.username }}
             </a>
+          </p>
+          <p v-if="component.references">
+            References:
+            <a
+              v-for="(reference, index) in component.references"
+              :key="`reference-${index}`"
+              :href="reference.link"
+              target="_blank"
+            >
+              {{ reference.name }}
+              <span v-if="index < component.references.length - 1">, </span>
+            </a>
+          </p>
+          <p v-if="component.technologies">
+            Technologies:
+            <b-tag
+              v-for="technology in component.technologies"
+              :key="technology"
+            >
+              {{ technology }}
+            </b-tag>
           </p>
         </div>
       </div>
