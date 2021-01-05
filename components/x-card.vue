@@ -1,10 +1,33 @@
 <template>
   <div class="card">
     <div class="card-content">
-      <div class="content">
+      <h2 class="title">
         <a :href="generateCodeSandboxURL(component.dir)" target="_blank">
           {{ component.name }}
         </a>
+      </h2>
+      <div class="media">
+        <b-image
+          :src="getGithubUserAvatarURL(component.github.username)"
+          :alt="component.github.name"
+          :title="component.github.name"
+          class="media-left image circle is-48x48"
+          rounded
+        ></b-image>
+
+        <div class="media-content">
+          <h5 class="title is-5">{{ component.github.name }}</h5>
+          <p class="subtitle is-6">
+            <a
+              :href="getGithubUserProfileURL(component.github.username)"
+              :title="component.github.name"
+              target="_blank"
+              rel="author"
+            >
+              @{{ component.github.username }}
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -12,6 +35,10 @@
 
 <script>
   import { generateCodeSandboxURL } from '@/utils/codesandbox';
+  import {
+    getGithubUserAvatarURL,
+    getGithubUserProfileURL,
+  } from '@/utils/user';
 
   export default {
     props: {
@@ -21,7 +48,11 @@
       },
     },
     data() {
-      return { generateCodeSandboxURL };
+      return {
+        generateCodeSandboxURL,
+        getGithubUserAvatarURL,
+        getGithubUserProfileURL,
+      };
     },
   };
 </script>
