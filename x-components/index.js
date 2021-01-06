@@ -9,8 +9,13 @@
 // }
 export default [
   {
-    name: 'Reusable “Login First” modal',
+    name: 'Auth Modal (Reusable “Login First” modal)',
     description: 'Kindly find attached article link for more details',
+    dir: 'login-first-modal',
+    github: {
+      name: 'Mahmoud Zohdi',
+      username: 'mahmoudzohdi',
+    },
     references: [
       {
         name:
@@ -19,10 +24,6 @@ export default [
           'https://medium.com/@mahmoud.zohdi/create-reusable-login-first-modal-before-the-user-action-with-vue-js-vuex-caa7038b352b',
       },
     ],
-    dir: 'login-first-modal',
-    github: {
-      name: 'Mahmoud Zohdi',
-      username: 'mahmoudzohdi',
-    },
+    technologies: ['Vue', 'Vuex'],
   },
 ];
