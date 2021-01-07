@@ -1,10 +1,8 @@
 <template>
   <div class="card">
     <div class="card-content">
-      <h2 class="title">
-        <a :href="generateCodeSandboxURL(component.dir)" target="_blank">
-          {{ component.name }}
-        </a>
+      <h2 class="title has-text-primary">
+        {{ component.name }}
       </h2>
       <div class="content">
         <p>
@@ -62,7 +60,6 @@
 </template>
 
 <script>
-  import { generateCodeSandboxURL } from '@/utils/codesandbox';
   import {
     getGithubUserAvatarURL,
     getGithubUserProfileURL,
@@ -79,7 +76,6 @@
     },
     data() {
       return {
-        generateCodeSandboxURL,
         getGithubUserAvatarURL,
         getGithubUserProfileURL,
       };

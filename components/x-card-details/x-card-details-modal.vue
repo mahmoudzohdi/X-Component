@@ -1,8 +1,15 @@
 <template>
   <section>
     <b-button type="is-primary is-light" @click="isModalActive = true">
-      show details
+      show component files
     </b-button>
+    <a
+      :href="generateCodeSandboxURL(component.dir)"
+      class="button is-primary is-light"
+      target="_blank"
+    >
+      demo
+    </a>
 
     <b-modal
       v-model="isModalActive"
@@ -16,6 +23,7 @@
 </template>
 
 <script>
+  import { generateCodeSandboxURL } from '@/utils/codesandbox';
   import XCardDetails from './x-card-details.vue';
 
   export default {
@@ -30,6 +38,7 @@
     data() {
       return {
         isModalActive: false,
+        generateCodeSandboxURL,
       };
     },
   };
