@@ -29,9 +29,7 @@
         tabs: [],
       };
     },
-    computed: {},
     mounted() {
-      // this.component.componentCodeFilesPath
       this.tabs = this.component.componentCodeFilesPath.reduce(
         (tabsArray, path) => {
           const splitPath = path.split('/');
