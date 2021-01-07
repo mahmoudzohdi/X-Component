@@ -82,3 +82,10 @@
     },
   };
 </script>
+
+<style scoped>
+  .card {
+    border: 1px solid #eee;
+    border-radius: 9px;
+  }
+</style>
