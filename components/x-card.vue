@@ -8,6 +8,8 @@
         <p>
           {{ component.description }}
         </p>
+        <x-card-details-modal :component="component"></x-card-details-modal>
+        <br />
         <p v-if="component.references">
           References:
           <a
@@ -20,6 +22,11 @@
             <span v-if="index < component.references.length - 1">, </span>
           </a>
         </p>
+        <b-taglist v-if="component.technologies">
+          <b-tag v-for="technology in component.technologies" :key="technology">
+            {{ technology }}
+          </b-tag>
+        </b-taglist>
       </div>
 
       <div class="media">
@@ -43,16 +50,6 @@
               @{{ component.github.username }}
             </a>
           </p>
-
-          <b-taglist v-if="component.technologies">
-            <b-tag
-              v-for="technology in component.technologies"
-              :key="technology"
-            >
-              {{ technology }}
-            </b-tag>
-          </b-taglist>
-          <x-card-details-modal :component="component"></x-card-details-modal>
         </div>
       </div>
     </div>
