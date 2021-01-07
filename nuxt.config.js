@@ -40,5 +40,14 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    // extend(config, ctx) {
+    //   config.module.rules.push({
+    //     enforce: 'pre',
+    //     test: /\.*$/,
+    //     loader: 'raw-loader',
+    //     exclude: /(node_modules)/,
+    //   });
+    // },
+  },
 };

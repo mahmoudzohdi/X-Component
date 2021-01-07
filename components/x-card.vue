@@ -57,6 +57,7 @@
         </div>
       </div>
     </div>
+    <x-card-details-modal :component="component"></x-card-details-modal>
   </div>
 </template>
 
@@ -66,8 +67,10 @@
     getGithubUserAvatarURL,
     getGithubUserProfileURL,
   } from '@/utils/user';
+  import XCardDetailsModal from './x-card-details/x-card-details-modal.vue';
 
   export default {
+    components: { XCardDetailsModal },
     props: {
       component: {
         type: Object,

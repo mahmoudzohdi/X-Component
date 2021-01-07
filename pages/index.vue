@@ -9,11 +9,11 @@
 </template>
 
 <script>
-  import XComponents from '@/x-components';
+  import XComponents from '@/static/x-components';
   import XCard from '@/components/x-card';
 
   export default {
-    name: 'Home',
+    name: 'home',
     components: {
       XCard,
     },

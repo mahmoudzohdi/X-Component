@@ -24,5 +24,6 @@ module.exports = {
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
     'import/extensions': 'off',
+    'vue/component-definition-name-casing': ['error', 'kebab-case'],
   },
 };
