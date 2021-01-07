@@ -1,6 +1,6 @@
 <template>
   <section v-if="tabs && tabs.length" class="x-card-details">
-    <b-tabs v-model="activeTab" type="is-boxed" @input="tabsInputHandler">
+    <b-tabs v-model="activeTab" type="is-boxed">
       <b-tab-item
         v-for="(tab, index) in tabs"
         :key="tab.label"
@@ -46,9 +46,6 @@
       );
     },
     methods: {
-      tabsInputHandler(e) {
-        console.log(e);
-      },
       getTabContent(tabIndex, filePath) {
         readFileContent(`/x-components/${this.component.dir}/${filePath}`).then(
           (res) => {
