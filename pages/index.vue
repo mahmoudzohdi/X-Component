@@ -1,10 +1,42 @@
 <template>
   <section class="section">
-    <x-card
-      v-for="xComponent in XComponents"
-      :key="xComponent.dir"
-      :component="xComponent"
-    ></x-card>
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <x-card
+          v-for="xComponent in XComponents"
+          :key="xComponent.dir"
+          :component="xComponent"
+        ></x-card>
+      </div>
+      <div class="column is-one-third">
+        <x-card
+          v-for="xComponent in XComponents"
+          :key="xComponent.dir"
+          :component="xComponent"
+        ></x-card>
+      </div>
+      <div class="column is-one-third">
+        <x-card
+          v-for="xComponent in XComponents"
+          :key="xComponent.dir"
+          :component="xComponent"
+        ></x-card>
+      </div>
+      <div class="column is-one-third">
+        <x-card
+          v-for="xComponent in XComponents"
+          :key="xComponent.dir"
+          :component="xComponent"
+        ></x-card>
+      </div>
+      <div class="column is-one-third">
+        <x-card
+          v-for="xComponent in XComponents"
+          :key="xComponent.dir"
+          :component="xComponent"
+        ></x-card>
+      </div>
+    </div>
   </section>
 </template>
 
