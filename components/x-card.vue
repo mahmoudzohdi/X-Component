@@ -54,10 +54,10 @@
               {{ technology }}
             </b-tag>
           </b-taglist>
+          <x-card-details-modal :component="component"></x-card-details-modal>
         </div>
       </div>
     </div>
-    <x-card-details-modal :component="component"></x-card-details-modal>
   </div>
 </template>
 

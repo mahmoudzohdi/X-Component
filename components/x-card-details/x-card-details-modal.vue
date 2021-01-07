@@ -1,10 +1,15 @@
 <template>
   <section>
-    <button class="button is-primary is-medium" @click="isModalActive = true">
+    <b-button type="is-primary is-light" @click="isModalActive = true">
       show details
-    </button>
+    </b-button>
 
-    <b-modal v-model="isModalActive" :width="640" scroll="keep">
+    <b-modal
+      v-model="isModalActive"
+      class="x-card-details-modal"
+      :width="640"
+      scroll="keep"
+    >
       <x-card-details :component="component"></x-card-details>
     </b-modal>
   </section>
@@ -29,3 +34,9 @@
     },
   };
 </script>
+<style lang="scss" scoped>
+  .x-card-details-modal {
+    justify-content: start;
+    padding-top: 50px;
+  }
+</style>
