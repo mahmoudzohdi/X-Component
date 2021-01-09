@@ -1,12 +1,8 @@
 <template>
   <section v-if="tabs && tabs.length" class="x-card-details">
-    <b-tabs v-model="activeTab" type="is-boxed">
-      <b-tab-item
-        v-for="(tab, index) in tabs"
-        :key="tab.label"
-        :label="tab.label"
-      >
-        <pre>{{ tab.content || getTabContent(index, tab.path) }}</pre>
+    <b-tabs v-model="activeTab" type="is-boxed" @input="tabsInputHandler">
+      <b-tab-item v-for="tab in tabs" :key="tab.label" :label="tab.label">
+        <pre>{{ tab.content }}</pre>
       </b-tab-item>
     </b-tabs>
   </section>
@@ -38,10 +34,12 @@
             label: splitPath[splitPath.length - 1],
             content: null,
             path,
+            fileExtention: splitPath[splitPath.length - 1].split('.')[1],
           });
         },
         []
       );
+      this.tabsInputHandler(0);
     },
     methods: {
       getTabContent(tabIndex, filePath) {
@@ -50,6 +48,10 @@
             this.tabs[tabIndex].content = res;
           }
         );
+      },
+      tabsInputHandler(tabIndex) {
+        !this.tabs[tabIndex].content &&
+          this.getTabContent(tabIndex, this.tabs[tabIndex].path);
       },
     },
   };

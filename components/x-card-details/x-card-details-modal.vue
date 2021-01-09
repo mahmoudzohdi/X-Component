@@ -11,12 +11,7 @@
       demo
     </a>
 
-    <b-modal
-      v-model="isModalActive"
-      class="x-card-details-modal"
-      :width="640"
-      scroll="keep"
-    >
+    <b-modal v-model="isModalActive" class="x-card-details-modal" scroll="keep">
       <x-card-details :component="component"></x-card-details>
     </b-modal>
   </section>
